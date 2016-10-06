@@ -22,6 +22,15 @@
               "type": "object",
               "legend": "Close",
               "properties": {
+                "_isEnabled": {
+                  "type":"boolean",
+                  "required":false,
+                  "default": false,
+                  "title": "Close Enabled",
+                  "inputType": { "type": "Boolean", "options": [false, true]},
+                  "validators": [],
+                  "help": "Enables Close Extension"
+                },
                 "_button": {
                   "type": "object",
                   "title": "Button",
@@ -132,6 +141,49 @@
                   "inputType": "Text",
                   "help": "Enter text to display a browser dialog if the window is closed after the course has been completed",
                   "translatable": true
+                }
+              }
+            }
+          }
+        },
+        "component": {
+          "type":"object",
+          "properties":{
+            "_achievements": {
+              "type":"object",
+              "required":false,
+              "legend": "Close",
+              "properties":{
+                "_isEnabled": {
+                  "type":"boolean",
+                  "required":false,
+                  "default": false,
+                  "title": "Close Enabled",
+                  "inputType": { "type": "Boolean", "options": [false, true]},
+                  "validators": [],
+                  "help": "Enables Close on the Component"
+                },
+                "_classes": {
+                  "type": "string",
+                  "required": false,
+                  "title": "Classes",
+                  "inputType": "Text",
+                  "validators": []
+                },
+                "_button": {
+                  "type": "object",
+                  "required": true,
+                  "properties": {
+                    "title": {
+                      "type": "string",
+                      "required": false,
+                      "default": "Close module",
+                      "title": "Button Title",
+                      "inputType": "TextArea",
+                      "validators": [],
+                      "help": "Title for the close button"
+                    }
+                  }
                 }
               }
             }

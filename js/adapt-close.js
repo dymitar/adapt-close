@@ -1,4 +1,7 @@
-define([ "coreJS/adapt" ], function(Adapt) {
+define([
+  'coreJS/adapt',
+  './close-component-view',
+], function(Adapt, CloseComponentView) {
 
 	var CloseView = Backbone.View.extend({
 
@@ -70,5 +73,11 @@ define([ "coreJS/adapt" ], function(Adapt) {
 			$(window).on("beforeunload", _.partial(onBeforeUnload, config));
 		}
 	});
+
+  Adapt.on('componentView:postRender', function(view) {
+      if (Adapt.course.get("_close") && Adapt.course.get("_close")._isEnabled && view.model.get("_close") && view.model.get("_close")._isEnabled) {
+        new CloseComponentView({model:view.model});
+      }
+  });
 
 });

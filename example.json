@@ -1,4 +1,5 @@
 "_close": {
+  "_isEnabled": true,
 	"_button": {
 		"_isEnabled": true,
 		"_notifyPromptIfIncomplete": {
@@ -19,3 +20,13 @@
 	"browserPromptIfIncomplete": "",
 	"browserPromptIfComplete": ""
 }
+
+// To go on a component
+
+    "_close": {
+      "_isEnabled": true,
+      "_classes": "",
+      "_button": {
+        "title": "Close module"
+      }
+    }
