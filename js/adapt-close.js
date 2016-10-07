@@ -76,7 +76,10 @@ define([
 
   Adapt.on('componentView:postRender', function(view) {
       if (Adapt.course.get("_close") && Adapt.course.get("_close")._isEnabled && view.model.get("_close") && view.model.get("_close")._isEnabled) {
-        new CloseComponentView({model:view.model});
+        // Only render view if it DOESN'T already exist - Work around for assessmentResults component
+        if (!$('.' + view.model.get('_id')).find('.close-component').length) {
+          new CloseComponentView({model:view.model});
+        }
       }
   });
 
