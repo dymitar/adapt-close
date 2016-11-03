@@ -181,7 +181,8 @@
                       "title": "Button Title",
                       "inputType": "TextArea",
                       "validators": [],
-                      "help": "Title for the close button"
+                      "help": "Title for the close button",
+                      "translatable": true
                     }
                   }
                 }
