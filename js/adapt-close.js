@@ -65,7 +65,7 @@ define([
 
 		var button = config._button;
 
-		if (button && button._isEnabled) {
+		if (button && button._isEnabled && config._isEnabled) {
 			new CloseView({ model: new Backbone.Model(button) });
 		}
 
