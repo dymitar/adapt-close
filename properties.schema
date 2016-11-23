@@ -39,7 +39,8 @@
                       "type": "boolean",
                       "default": true,
                       "title": "Is enabled",
-                      "inputType": "Checkbox",
+                      "inputType": { "type": "Boolean", "options": [false, true]},
+                      "validators": [],
                       "help": "Add a close button to the navigation bar"
                     },
                     "_notifyPromptIfIncomplete": {
@@ -50,7 +51,8 @@
                           "type": "boolean",
                           "default": false,
                           "title": "Is enabled",
-                          "inputType": "Checkbox",
+                          "inputType": { "type": "Boolean", "options": [false, true]},
+                          "validators": [],
                           "help": "Display a notify prompt if the close button is selected while the course is incomplete"
                         },
                         "title": {
@@ -91,7 +93,8 @@
                           "type": "boolean",
                           "default": false,
                           "title": "Is enabled",
-                          "inputType": "Checkbox",
+                          "inputType": { "type": "Boolean", "options": [false, true]},
+                          "validators": [],
                           "help": "Display a notify prompt if the close button is selected after the course has been completed"
                         },
                         "title": {
