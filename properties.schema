@@ -20,7 +20,7 @@
           "properties": {
             "_close": {
               "type": "object",
-              "legend": "Close",
+              "legend": "Close Button",
               "properties": {
                 "_isEnabled": {
                   "type":"boolean",
@@ -29,7 +29,7 @@
                   "title": "Close Enabled",
                   "inputType": { "type": "Boolean", "options": [false, true]},
                   "validators": [],
-                  "help": "Enables Close Extension"
+                  "help": "Enables close extension"
                 },
                 "_button": {
                   "type": "object",
@@ -50,7 +50,7 @@
                         "_isEnabled": {
                           "type": "boolean",
                           "default": false,
-                          "title": "Is enabled",
+                          "title": "Is Enabled",
                           "inputType": { "type": "Boolean", "options": [false, true]},
                           "validators": [],
                           "help": "Display a notify prompt if the close button is selected while the course is incomplete"
@@ -92,7 +92,7 @@
                         "_isEnabled": {
                           "type": "boolean",
                           "default": false,
-                          "title": "Is enabled",
+                          "title": "Is Enabled",
                           "inputType": { "type": "Boolean", "options": [false, true]},
                           "validators": [],
                           "help": "Display a notify prompt if the close button is selected after the course has been completed"
@@ -152,10 +152,10 @@
         "component": {
           "type":"object",
           "properties":{
-            "_achievements": {
+            "_close": {
               "type":"object",
               "required":false,
-              "legend": "Close",
+              "legend": "Close Button",
               "properties":{
                 "_isEnabled": {
                   "type":"boolean",
@@ -164,7 +164,7 @@
                   "title": "Close Enabled",
                   "inputType": { "type": "Boolean", "options": [false, true]},
                   "validators": [],
-                  "help": "Enables Close on the Component"
+                  "help": "Enables close button on the component"
                 },
                 "_classes": {
                   "type": "string",
