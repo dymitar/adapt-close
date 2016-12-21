@@ -166,15 +166,6 @@
                   "validators": [],
                   "help": "Enables close button on the component"
                 },
-                "_promptIsEnabled": {
-                  "type":"boolean",
-                  "required":false,
-                  "default": false,
-                  "title": "Browser Prompt Enabled",
-                  "inputType": { "type": "Boolean", "options": [false, true]},
-                  "validators": [],
-                  "help": "Display a notify prompt if the close button is selected"
-                },
                 "_classes": {
                   "type": "string",
                   "required": false,
