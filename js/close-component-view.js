@@ -34,7 +34,7 @@ define(function(require) {
             if(this.model.get('_close')._notifyPrompt._isEnabled) {
               this.showPrompt();
             } else {
-              Adapt.trigger("close:confirm");
+              this.onCloseConfirm();
             }
         },
 
