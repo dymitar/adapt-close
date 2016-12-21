@@ -166,6 +166,15 @@
                   "validators": [],
                   "help": "Enables close button on the component"
                 },
+                "_promptIsEnabled": {
+                  "type":"boolean",
+                  "required":false,
+                  "default": false,
+                  "title": "Browser Prompt Enabled",
+                  "inputType": { "type": "Boolean", "options": [false, true]},
+                  "validators": [],
+                  "help": "Display a notify prompt if the close button is selected"
+                },
                 "_classes": {
                   "type": "string",
                   "required": false,
@@ -182,9 +191,51 @@
                       "required": false,
                       "default": "Close module",
                       "title": "Button Title",
-                      "inputType": "TextArea",
+                      "inputType": "Text",
                       "validators": [],
                       "help": "Title for the close button",
+                      "translatable": true
+                    }
+                  }
+                },
+                "_notifyPrompt": {
+                  "type": "object",
+                  "title": "Notify prompt",
+                  "properties": {
+                    "_isEnabled": {
+                      "type": "boolean",
+                      "default": false,
+                      "title": "Is Enabled",
+                      "inputType": { "type": "Boolean", "options": [false, true]},
+                      "validators": [],
+                      "help": "Display a notify prompt if the close button is selected"
+                    },
+                    "title": {
+                      "type": "string",
+                      "default": "Confirm close",
+                      "inputType": "Text",
+                      "help": "Enter the prompt title",
+                      "translatable": true
+                    },
+                    "body": {
+                      "type": "string",
+                      "default": "Are you sure you want to close the window?",
+                      "inputType": "TextArea",
+                      "help": "Enter the prompt message",
+                      "translatable": true
+                    },
+                    "confirm": {
+                      "type": "string",
+                      "default": "Close window",
+                      "inputType": "Text",
+                      "help": "Enter the confirm button text",
+                      "translatable": true
+                    },
+                    "cancel": {
+                      "type": "string",
+                      "default": "Cancel",
+                      "inputType": "Text",
+                      "help": "Enter the cancel button text",
                       "translatable": true
                     }
                   }
