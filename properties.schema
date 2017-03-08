@@ -26,22 +26,23 @@
                   "type":"boolean",
                   "required":false,
                   "default": false,
-                  "title": "Close Enabled",
+                  "title": "Is enabled",
                   "inputType": { "type": "Boolean", "options": [false, true]},
                   "validators": [],
                   "help": "Enables close extension"
                 },
                 "_button": {
                   "type": "object",
-                  "title": "Button",
+                  "title": "Navigation bar button",
                   "properties": {
                     "_isEnabled": {
                       "type": "boolean",
-                      "default": true,
+                      "required":false,
+                      "default": false,
                       "title": "Is enabled",
                       "inputType": { "type": "Boolean", "options": [false, true]},
                       "validators": [],
-                      "help": "Add a close button to the navigation bar"
+                      "help": "Adds a close button to the navigation bar if enabled"
                     },
                     "_notifyPromptIfIncomplete": {
                       "type": "object",
@@ -49,36 +50,41 @@
                       "properties": {
                         "_isEnabled": {
                           "type": "boolean",
+                          "required":false,
                           "default": false,
-                          "title": "Is Enabled",
+                          "title": "Is enabled",
                           "inputType": { "type": "Boolean", "options": [false, true]},
                           "validators": [],
                           "help": "Display a notify prompt if the close button is selected while the course is incomplete"
                         },
                         "title": {
                           "type": "string",
-                          "default": "Confirm close",
+                          "required":false,
+                          "default": "",
                           "inputType": "Text",
                           "help": "Enter the prompt title",
                           "translatable": true
                         },
                         "body": {
                           "type": "string",
-                          "default": "Are you sure you want to close the window?",
+                          "required":false,
+                          "default": "",
                           "inputType": "TextArea",
                           "help": "Enter the prompt message",
                           "translatable": true
                         },
                         "confirm": {
                           "type": "string",
-                          "default": "Close window",
+                          "required":false,
+                          "default": "",
                           "inputType": "Text",
                           "help": "Enter the confirm button text",
                           "translatable": true
                         },
                         "cancel": {
                           "type": "string",
-                          "default": "Cancel",
+                          "required":false,
+                          "default": "",
                           "inputType": "Text",
                           "help": "Enter the cancel button text",
                           "translatable": true
@@ -91,36 +97,41 @@
                       "properties": {
                         "_isEnabled": {
                           "type": "boolean",
+                          "required":false,
                           "default": false,
-                          "title": "Is Enabled",
+                          "title": "Is enabled",
                           "inputType": { "type": "Boolean", "options": [false, true]},
                           "validators": [],
                           "help": "Display a notify prompt if the close button is selected after the course has been completed"
                         },
                         "title": {
                           "type": "string",
-                          "default": "Confirm close",
+                          "required":false,
+                          "default": "",
                           "inputType": "Text",
                           "help": "Enter the prompt title",
                           "translatable": true
                         },
                         "body": {
                           "type": "string",
-                          "default": "Are you sure you want to close the window?",
+                          "required":false,
+                          "default": "",
                           "inputType": "TextArea",
                           "help": "Enter the prompt message",
                           "translatable": true
                         },
                         "confirm": {
                           "type": "string",
-                          "default": "Close window",
+                          "required":false,
+                          "default": "",
                           "inputType": "Text",
                           "help": "Enter the confirm button text",
                           "translatable": true
                         },
                         "cancel": {
                           "type": "string",
-                          "default": "Cancel",
+                          "required":false,
+                          "default": "",
                           "inputType": "Text",
                           "help": "Enter the cancel button text",
                           "translatable": true
@@ -131,6 +142,7 @@
                 },
                 "browserPromptIfIncomplete": {
                   "type": "string",
+                  "required":false,
                   "default": "",
                   "title": "Browser prompt if incomplete",
                   "inputType": "Text",
@@ -139,6 +151,7 @@
                 },
                 "browserPromptIfComplete": {
                   "type": "string",
+                  "required":false,
                   "default": "",
                   "title": "Browser prompt if complete",
                   "inputType": "Text",
@@ -161,7 +174,7 @@
                   "type":"boolean",
                   "required":false,
                   "default": false,
-                  "title": "Close Enabled",
+                  "title": "Is enabled",
                   "inputType": { "type": "Boolean", "options": [false, true]},
                   "validators": [],
                   "help": "Enables close button on the component"
@@ -180,11 +193,10 @@
                     "title": {
                       "type": "string",
                       "required": false,
-                      "default": "Close module",
-                      "title": "Button Title",
+                      "default": "",
+                      "title": "Button text",
                       "inputType": "Text",
                       "validators": [],
-                      "help": "Title for the close button",
                       "translatable": true
                     }
                   }
@@ -195,38 +207,43 @@
                   "properties": {
                     "_isEnabled": {
                       "type": "boolean",
+                      "required": false,
                       "default": false,
-                      "title": "Is Enabled",
+                      "title": "Is enabled",
                       "inputType": { "type": "Boolean", "options": [false, true]},
                       "validators": [],
                       "help": "Display a notify prompt if the close button is selected"
                     },
                     "title": {
                       "type": "string",
-                      "default": "Confirm close",
+                      "required": false,
+                      "default": "",
+                      "title": "Prompt Title",
                       "inputType": "Text",
-                      "help": "Enter the prompt title",
                       "translatable": true
                     },
                     "body": {
                       "type": "string",
-                      "default": "Are you sure you want to close the window?",
+                      "required": false,
+                      "default": "",
+                      "title": "Prompt Body",
                       "inputType": "TextArea",
-                      "help": "Enter the prompt message",
                       "translatable": true
                     },
                     "confirm": {
                       "type": "string",
-                      "default": "Close window",
+                      "required": false,
+                      "default": "",
+                      "title": "Confirm button text",
                       "inputType": "Text",
-                      "help": "Enter the confirm button text",
                       "translatable": true
                     },
                     "cancel": {
                       "type": "string",
-                      "default": "Cancel",
+                      "required": false,
+                      "default": "",
+                      "title": "Cancel button text",
                       "inputType": "Text",
-                      "help": "Enter the cancel button text",
                       "translatable": true
                     }
                   }
