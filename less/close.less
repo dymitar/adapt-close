@@ -3,10 +3,19 @@
 }
 
 .close-component {
-    .close-inner {
-        margin-top: @button-margin;
+	display: inline-block;
+
+	.close-inner {
+		margin-top: @button-margin;
+		padding-left: @component-padding / 2;
+		padding-right: @component-padding / 2;
+
 		&.center {
 			text-align: center;
 		}
-    }
+	}
+}
+
+.extensions {
+	text-align: center;
 }
