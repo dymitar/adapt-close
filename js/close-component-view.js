@@ -28,7 +28,7 @@ define(function(require) {
             }
 
             // Add data
-            $(this.el).html(template(data)).appendTo('.extensions');
+            $(this.el).html(template(data)).appendTo('.' + this.model.get('_id') + " > .component-inner" + " > .extensions");
 
             _.defer(_.bind(function() {
                 this.postRender();
