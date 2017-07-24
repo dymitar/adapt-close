@@ -1,12 +1,14 @@
 # Close
 
-An extension to add a close button and/or prompts.
+**Close** is an *extension* for the the [Adapt framework](https://github.com/adaptlearning/adapt_framework).   
+
+An extension to add a close button and/or prompts.  
 
 ## Installation
 
-* Add the [example JSON](example.json) to `course.json`.
-* With [Adapt CLI](https://github.com/adaptlearning/adapt-cli) installed, run `adapt install close`. Alternatively, download the ZIP and extract into the src > extensions directory.
-* Run an appropriate Grunt task.
+This extension must be manually installed.  
+
+If **Close** has been uninstalled from the Adapt authoring tool, it may be reinstalled using the [Plug-in Manager](https://github.com/adaptlearning/adapt_authoring/wiki/Plugin-Manager).  
 
 ## Usage
 
@@ -106,4 +108,14 @@ An extension to add a close button and/or prompts.
 	</tr>
 </table>
 
-* Note: Firefox doesn’t currently support custom messages in its dialogs.
+## Limitations
+
+Firefox doesn’t currently support custom messages in its dialogs.
+
+----------------------------
+**Version number:**  2.0.11   
+**Framework versions supported:**  2.0.6    
+**Author / maintainer:** [C&G Kineo](https://github.com/cgkineo/adapt-close) / DeltaNet with [contributors](https://github.com/deltanet/adapt-close/graphs/contributors)     
+**Accessibility support:** Yes  
+**RTL support:** Yes     
+**Authoring tool support:** Yes
