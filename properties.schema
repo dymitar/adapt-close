@@ -24,12 +24,12 @@
               "properties": {
                 "_isEnabled": {
                   "type":"boolean",
-                  "required":false,
+                  "required": false,
                   "default": false,
-                  "title": "Is enabled",
-                  "inputType": { "type": "Boolean", "options": [false, true]},
+                  "title": "Is Enabled",
+                  "inputType": "Checkbox",
                   "validators": [],
-                  "help": "Enables close extension"
+                  "help": "Controls whether the Close extension is enabled or disabled."
                 },
                 "_button": {
                   "type": "object",
@@ -37,12 +37,12 @@
                   "properties": {
                     "_isEnabled": {
                       "type": "boolean",
-                      "required":false,
+                      "required": false,
                       "default": false,
-                      "title": "Is enabled",
-                      "inputType": { "type": "Boolean", "options": [false, true]},
+                      "title": "Is Enabled",
+                      "inputType": "Checkbox",
                       "validators": [],
-                      "help": "Adds a close button to the navigation bar if enabled"
+                      "help": "Adds a close button to the navigation bar if enabled."
                     },
                     "_notifyPromptIfIncomplete": {
                       "type": "object",
@@ -50,16 +50,16 @@
                       "properties": {
                         "_isEnabled": {
                           "type": "boolean",
-                          "required":false,
+                          "required": false,
                           "default": false,
-                          "title": "Is enabled",
-                          "inputType": { "type": "Boolean", "options": [false, true]},
+                          "title": "Is Enabled",
+                          "inputType": "Checkbox",
                           "validators": [],
-                          "help": "Display a notify prompt if the close button is selected while the course is incomplete"
+                          "help": "Display a notify prompt if the close button is selected while the course is incomplete."
                         },
                         "title": {
                           "type": "string",
-                          "required":false,
+                          "required": false,
                           "default": "",
                           "inputType": "Text",
                           "help": "Enter the prompt title",
@@ -67,7 +67,7 @@
                         },
                         "body": {
                           "type": "string",
-                          "required":false,
+                          "required": false,
                           "default": "",
                           "inputType": "TextArea",
                           "help": "Enter the prompt message",
@@ -75,7 +75,7 @@
                         },
                         "confirm": {
                           "type": "string",
-                          "required":false,
+                          "required": false,
                           "default": "",
                           "inputType": "Text",
                           "help": "Enter the confirm button text",
@@ -83,7 +83,7 @@
                         },
                         "cancel": {
                           "type": "string",
-                          "required":false,
+                          "required": false,
                           "default": "",
                           "inputType": "Text",
                           "help": "Enter the cancel button text",
@@ -97,16 +97,16 @@
                       "properties": {
                         "_isEnabled": {
                           "type": "boolean",
-                          "required":false,
+                          "required": false,
                           "default": false,
-                          "title": "Is enabled",
-                          "inputType": { "type": "Boolean", "options": [false, true]},
+                          "title": "Is Enabled",
+                          "inputType": "Checkbox",
                           "validators": [],
-                          "help": "Display a notify prompt if the close button is selected after the course has been completed"
+                          "help": "Display a notify prompt if the close button is selected after the course has been completed."
                         },
                         "title": {
                           "type": "string",
-                          "required":false,
+                          "required": false,
                           "default": "",
                           "inputType": "Text",
                           "help": "Enter the prompt title",
@@ -114,7 +114,7 @@
                         },
                         "body": {
                           "type": "string",
-                          "required":false,
+                          "required": false,
                           "default": "",
                           "inputType": "TextArea",
                           "help": "Enter the prompt message",
@@ -122,7 +122,7 @@
                         },
                         "confirm": {
                           "type": "string",
-                          "required":false,
+                          "required": false,
                           "default": "",
                           "inputType": "Text",
                           "help": "Enter the confirm button text",
@@ -130,7 +130,7 @@
                         },
                         "cancel": {
                           "type": "string",
-                          "required":false,
+                          "required": false,
                           "default": "",
                           "inputType": "Text",
                           "help": "Enter the cancel button text",
@@ -142,7 +142,7 @@
                 },
                 "browserPromptIfIncomplete": {
                   "type": "string",
-                  "required":false,
+                  "required": false,
                   "default": "",
                   "title": "Browser prompt if incomplete",
                   "inputType": "Text",
@@ -151,7 +151,7 @@
                 },
                 "browserPromptIfComplete": {
                   "type": "string",
-                  "required":false,
+                  "required": false,
                   "default": "",
                   "title": "Browser prompt if complete",
                   "inputType": "Text",
@@ -167,17 +167,17 @@
           "properties":{
             "_close": {
               "type":"object",
-              "required":false,
+              "required": false,
               "legend": "Close Button",
               "properties":{
                 "_isEnabled": {
                   "type":"boolean",
-                  "required":false,
+                  "required": false,
                   "default": false,
-                  "title": "Is enabled",
-                  "inputType": { "type": "Boolean", "options": [false, true]},
+                  "title": "Is Enabled",
+                  "inputType": "Checkbox",
                   "validators": [],
-                  "help": "Enables close button on the component"
+                  "help": "Controls whether the Close extension is enabled or disabled."
                 },
                 "_classes": {
                   "type": "string",
@@ -209,10 +209,10 @@
                       "type": "boolean",
                       "required": false,
                       "default": false,
-                      "title": "Is enabled",
-                      "inputType": { "type": "Boolean", "options": [false, true]},
+                      "title": "Is Enabled",
+                      "inputType": "Checkbox",
                       "validators": [],
-                      "help": "Display a notify prompt if the close button is selected"
+                      "help": "Display a notify prompt if the close button is selected."
                     },
                     "title": {
                       "type": "string",
