@@ -29,6 +29,10 @@
       "_button": {
         "title": "Close module"
       },
+      "_tracking": {
+          "_requireCourseCompleted": false,
+          "_requireAssessmentPassed": false
+      },
       "_notifyPrompt": {
           "_isEnabled": true,
           "title": "Confirm close",
