@@ -10,6 +10,9 @@ define(function(require) {
         initialize: function () {
             this.render();
             this.listenTo(Adapt, "close:closeWindow", this.onCloseConfirm);
+            // Listen for course completion
+            this.listenTo(Adapt.course, 'change:_isComplete', this.checkCompletion);
+            this.listenTo(Adapt.course, 'change:_isAssessmentPassed', this.checkCompletion);
         },
 
         events: {
@@ -30,13 +33,17 @@ define(function(require) {
             // Add data
             $(this.el).html(template(data)).appendTo('.' + this.model.get('_id') + " > .component-inner" + " > .extensions");
 
+            this.$('.close-button').hide();
+
             _.defer(_.bind(function() {
                 this.postRender();
             }, this));
 
         },
 
-        postRender: function() {},
+        postRender: function() {
+          this.checkCompletion();
+        },
 
         closeModule: function(event) {
             if (event) event.preventDefault();
@@ -68,7 +75,26 @@ define(function(require) {
 
         onCloseConfirm: function() {
     			top.window.close();
-    		}
+    		},
+
+        checkCompletion: function() {
+          if (!this.checkTrackingCriteriaMet()) return;
+          this.$('.close-button').show();
+        },
+
+        checkTrackingCriteriaMet: function() {
+          // Set to true for backwards compatability for nothing set in the data
+          var criteriaMet = true;
+
+          if (this.model.get('_close')._tracking._requireCourseCompleted && this.model.get('_close')._tracking._requireAssessmentPassed) { // user must complete the content AND pass the assessment
+            criteriaMet = (Adapt.course.get('_isComplete') && Adapt.course.get('_isAssessmentPassed'));
+          } else if (this.model.get('_close')._tracking._requireCourseCompleted) { //user only needs to complete the content
+            criteriaMet = Adapt.course.get('_isComplete');
+          } else if (this.model.get('_close')._tracking._requireAssessmentPassed) { // user only needs to pass the assessment
+            criteriaMet = Adapt.course.get('_isAssessmentPassed');
+          }
+          return criteriaMet;
+        }
 
     });
 

@@ -76,28 +76,11 @@ define([
 
   Adapt.on('componentView:postRender', function(view) {
       if (Adapt.course.get("_close") && Adapt.course.get("_close")._isEnabled && view.model.get("_close") && view.model.get("_close")._isEnabled) {
-        // Check criteria first
-        if (!checkTrackingCriteriaMet(view)) return;
         // Only render view if it DOESN'T already exist - Work around for assessmentResults component
         if (!$('.' + view.model.get('_id')).find('.close-component').length) {
           new CloseComponentView({model:view.model});
         }
       }
   });
-
-  function checkTrackingCriteriaMet(view) {
-    // Set to true for backwards compatability for nothing set in the data
-    var criteriaMet = true;
-    if (view.model.has('_close')._tracking) {
-      if (view.model.get('_close')._tracking._requireCourseCompleted && view.model.get('_close')._tracking._requireAssessmentPassed) { // user must complete the content AND pass the assessment
-        criteriaMet = (Adapt.course.get('_isComplete') && Adapt.course.get('_isAssessmentPassed'));
-      } else if (view.model.get('_close')._tracking._requireCourseCompleted) { //user only needs to complete the content
-        criteriaMet = Adapt.course.get('_isComplete');
-      } else if (view.model.get('_close')._tracking._requireAssessmentPassed) { // user only needs to pass the assessment
-        criteriaMet = Adapt.course.get('_isAssessmentPassed');
-      }
-    }
-    return criteriaMet;
-  }
 
 });
