@@ -86,11 +86,11 @@ define(function(require) {
           // Set to true for backwards compatability for nothing set in the data
           var criteriaMet = true;
 
-          if (this.model.get('_close')._tracking._requireCourseCompleted && this.model.get('_close')._tracking._requireAssessmentPassed) { // user must complete the content AND pass the assessment
+          if (this.model.get('_close')._tracking && this.model.get('_close')._tracking._requireCourseCompleted && this.model.get('_close')._tracking._requireAssessmentPassed) { // user must complete the content AND pass the assessment
             criteriaMet = (Adapt.course.get('_isComplete') && Adapt.course.get('_isAssessmentPassed'));
-          } else if (this.model.get('_close')._tracking._requireCourseCompleted) { //user only needs to complete the content
+          } else if (this.model.get('_close')._tracking && this.model.get('_close')._tracking._requireCourseCompleted) { //user only needs to complete the content
             criteriaMet = Adapt.course.get('_isComplete');
-          } else if (this.model.get('_close')._tracking._requireAssessmentPassed) { // user only needs to pass the assessment
+          } else if (this.model.get('_close')._tracking && this.model.get('_close')._tracking._requireAssessmentPassed) { // user only needs to pass the assessment
             criteriaMet = Adapt.course.get('_isAssessmentPassed');
           }
           return criteriaMet;
