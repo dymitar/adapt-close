@@ -1,8 +1,8 @@
 # Close
 
-**Close** is an *extension* for the the [Adapt framework](https://github.com/adaptlearning/adapt_framework).   
+**Close** is an *extension* for the [Adapt framework](https://github.com/adaptlearning/adapt_framework).   
 
-An extension to add a close button and/or prompts.  
+An extension to add a close button to the navigation bar and/or Articles, Blocks and Components.  
 
 ## Installation
 
@@ -113,8 +113,8 @@ If **Close** has been uninstalled from the Adapt authoring tool, it may be reins
 Firefox doesn’t currently support custom messages in its dialogs.
 
 ----------------------------
-**Version number:**  2.1.3   
-**Framework versions supported:**  2.0.6    
+**Version number:**  3.0.0   
+**Framework versions supported:**  4+    
 **Author / maintainer:** [C&G Kineo](https://github.com/cgkineo/adapt-close) / DeltaNet with [contributors](https://github.com/deltanet/adapt-close/graphs/contributors)     
 **Accessibility support:** Yes  
 **RTL support:** Yes     

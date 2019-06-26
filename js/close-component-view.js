@@ -1,18 +1,18 @@
-define(function(require) {
-
-    var Adapt = require('coreJS/adapt');
-    var Backbone = require('backbone');
+define([
+  'core/js/adapt'
+], function(Adapt) {
 
     var CloseComponentView = Backbone.View.extend({
 
         className: "close-component",
 
         initialize: function () {
-            this.render();
             this.listenTo(Adapt, "close:closeWindow", this.onCloseConfirm);
             // Listen for course completion
             this.listenTo(Adapt.course, 'change:_isComplete', this.checkCompletion);
             this.listenTo(Adapt.course, 'change:_isAssessmentPassed', this.checkCompletion);
+
+            this.render();
         },
 
         events: {
@@ -38,7 +38,6 @@ define(function(require) {
             _.defer(_.bind(function() {
                 this.postRender();
             }, this));
-
         },
 
         postRender: function() {

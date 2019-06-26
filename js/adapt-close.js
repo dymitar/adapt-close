@@ -1,5 +1,5 @@
 define([
-  'coreJS/adapt',
+  'core/js/adapt',
   './close-component-view',
 ], function(Adapt, CloseComponentView) {
 
