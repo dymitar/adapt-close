@@ -1,4 +1,5 @@
 // To go on course json
+
 "_close": {
   "_isEnabled": true,
 	"_button": {
@@ -20,24 +21,25 @@
 	},
 	"browserPromptIfIncomplete": "",
 	"browserPromptIfComplete": ""
-}
+},
 
 // To go on a component
-    "_close": {
-      "_isEnabled": true,
-      "_classes": "",
-      "_button": {
-        "title": "Close module"
-      },
-      "_tracking": {
-          "_requireCourseCompleted": false,
-          "_requireAssessmentPassed": false
-      },
-      "_notifyPrompt": {
-          "_isEnabled": true,
-          "title": "Confirm close",
-          "body": "Are you sure you want to close the window?",
-          "confirm": "Close window",
-          "cancel": "Cancel"
+
+"_close": {
+    "_isEnabled": true,
+    "_classes": "",
+    "_button": {
+      "title": "Close module"
+    },
+    "_tracking": {
+        "_requireCourseCompleted": false,
+        "_requireAssessmentPassed": false
+    },
+    "_notifyPrompt": {
+        "_isEnabled": true,
+        "title": "Confirm close",
+        "body": "Are you sure you want to close the window?",
+        "confirm": "Close window",
+        "cancel": "Cancel"
       }
-    }
+},

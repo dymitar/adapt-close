@@ -1,16 +1,17 @@
 {
 	"name": "adapt-close",
-	"version": "2.1.3",
-	"framework": "^2.0.4",
+	"version": "3.0.0",
+	"framework": ">=4",
+	"homepage": "https://github.com/deltanet/adapt-close",
+	"issues": "https://github.com/deltanet/adapt-close/issues",
 	"displayName": "Close",
 	"extension": "close",
-	"targetAttribute": "_close",
-	"description": "An extension to add a close button and/or prompts",
+	"description": "An extension to add a close button to the navigation bar and/or Articles, Blocks and Components.",
 	"main": "/js/adapt-close.js",
 	"keywords": [
 		"adapt-plugin",
 		"adapt-extension"
 	],
-	"license": "GPL-3.0",
-	"homepage": "https://github.com/deltanet/adapt-close"
+	"license": "GPLv3",
+	"targetAttribute": "_close"
 }
