@@ -33,7 +33,7 @@ define([
             // Add data
             $(this.el).html(template(data)).appendTo('.' + this.model.get('_id') + " > .component-inner" + " > .extensions");
 
-            this.$('.close-button').hide();
+            this.$('.close-inner').hide();
 
             _.defer(_.bind(function() {
                 this.postRender();
@@ -78,7 +78,7 @@ define([
 
         checkCompletion: function() {
           if (!this.checkTrackingCriteriaMet()) return;
-          this.$('.close-button').show();
+          this.$('.close-inner').show();
         },
 
         checkTrackingCriteriaMet: function() {
