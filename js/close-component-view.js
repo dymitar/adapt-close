@@ -10,7 +10,7 @@ define([
             this.listenTo(Adapt, "close:closeWindow", this.onCloseConfirm);
             // Listen for course completion
             this.listenTo(Adapt.course, 'change:_isComplete', this.checkCompletion);
-            this.listenTo(Adapt.course, 'change:_isAssessmentPassed', this.checkCompletion);
+            this.listenTo(Adapt, 'assessment:complete', this.onAssessmentComplete);
 
             this.render();
         },
@@ -35,13 +35,17 @@ define([
 
             this.$('.close-inner').hide();
 
+            this.completionCriteriaMet = false;
+            this.assessmentCriteriaMet = false;
+
             _.defer(_.bind(function() {
                 this.postRender();
             }, this));
         },
 
         postRender: function() {
-          this.checkCompletion();
+            this.checkCompletion();
+            this.onAssessmentComplete(Adapt.assessment.getState());
         },
 
         closeModule: function(event) {
@@ -76,23 +80,35 @@ define([
     			top.window.close();
     		},
 
+        onAssessmentComplete: function(state) {
+            if (state.isPass) {
+                this.assessmentCriteriaMet = true;
+            }
+
+            this.checkTrackingCriteriaMet();
+        },
+
         checkCompletion: function() {
-          if (!this.checkTrackingCriteriaMet()) return;
-          this.$('.close-inner').show();
+            this.completionCriteriaMet = Adapt.course.get('_isComplete');
+
+            this.checkTrackingCriteriaMet();
         },
 
         checkTrackingCriteriaMet: function() {
-          // Set to true for backwards compatability for nothing set in the data
-          var criteriaMet = true;
+            // Set to true for backwards compatability for nothing set in the data
+            var criteriaMet = true;
 
-          if (this.model.get('_close')._tracking && this.model.get('_close')._tracking._requireCourseCompleted && this.model.get('_close')._tracking._requireAssessmentPassed) { // user must complete the content AND pass the assessment
-            criteriaMet = (Adapt.course.get('_isComplete') && Adapt.course.get('_isAssessmentPassed'));
-          } else if (this.model.get('_close')._tracking && this.model.get('_close')._tracking._requireCourseCompleted) { //user only needs to complete the content
-            criteriaMet = Adapt.course.get('_isComplete');
-          } else if (this.model.get('_close')._tracking && this.model.get('_close')._tracking._requireAssessmentPassed) { // user only needs to pass the assessment
-            criteriaMet = Adapt.course.get('_isAssessmentPassed');
-          }
-          return criteriaMet;
+            if (this.model.get('_close')._tracking && this.model.get('_close')._tracking._requireCourseCompleted && this.model.get('_close')._tracking._requireAssessmentPassed) { // user must complete the content AND pass the assessment
+                criteriaMet = (this.completionCriteriaMet && this.assessmentCriteriaMet);
+            } else if (this.model.get('_close')._tracking && this.model.get('_close')._tracking._requireCourseCompleted) { //user only needs to complete the content
+                criteriaMet = this.completionCriteriaMet;
+            } else if (this.model.get('_close')._tracking && this.model.get('_close')._tracking._requireAssessmentPassed) { // user only needs to pass the assessment
+                criteriaMet = this.assessmentCriteriaMet;
+            }
+
+            if (!criteriaMet) return;
+
+            this.$('.close-inner').show();
         }
 
     });
