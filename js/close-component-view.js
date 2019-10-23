@@ -45,6 +45,8 @@ define([
 
         postRender: function() {
             this.checkCompletion();
+
+            if (!Adapt.assessment) return;
             this.onAssessmentComplete(Adapt.assessment.getState());
         },
 
