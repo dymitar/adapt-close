@@ -46,6 +46,8 @@ define([
         postRender: function() {
             this.checkCompletion();
 
+            $('.' + this.model.get('_id')).on("onscreen", _.bind(this.onscreen, this));
+
             if (!Adapt.assessment) return;
             this.onAssessmentComplete(Adapt.assessment.getState());
         },
@@ -111,6 +113,23 @@ define([
             if (!criteriaMet) return;
 
             this.$('.close-inner').show();
+        },
+
+        onscreen: function(event, measurements) {
+          var visible = this.model.get('_isVisible');
+          var isOnscreenY = measurements.percentFromTop < 50 && measurements.percentFromTop > 0;
+          var isOnscreenX = measurements.percentInviewHorizontal == 100;
+          // Check for element coming on screen
+          if (visible && isOnscreenY && isOnscreenX) {
+            $('.' + this.model.get('_id')).off('onscreen');
+            this.onCompletion();
+          }
+        },
+
+        onCompletion: function() {
+          _.delay(function() {
+            Adapt.trigger('close:checkCompletion');
+          }, 500);
         }
 
     });

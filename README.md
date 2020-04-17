@@ -113,7 +113,7 @@ If **Close** has been uninstalled from the Adapt authoring tool, it may be reins
 Firefox doesn’t currently support custom messages in its dialogs.
 
 ----------------------------
-**Version number:**  3.0.3   
+**Version number:**  3.1.0   
 **Framework versions supported:**  4+    
 **Author / maintainer:** [C&G Kineo](https://github.com/cgkineo/adapt-close) / DeltaNet with [contributors](https://github.com/deltanet/adapt-close/graphs/contributors)     
 **Accessibility support:** Yes  
