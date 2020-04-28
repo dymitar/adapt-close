@@ -27,8 +27,6 @@ define([
         "componentView:postRender": this.onComponentReady
       });
 
-      this.listenToOnce(Adapt, "pageView:ready menuView:ready", this.checkCompletion);
-
       if (this.closeConfig.browserPromptIfIncomplete || this.closeConfig.browserPromptIfComplete) {
   			$(window).on("beforeunload", _.partial(onBeforeUnload, this.closeConfig));
   		}
@@ -75,6 +73,10 @@ define([
     checkCompletion: function() {
       var completionData = this.getCompletionData();
 
+      if (completionData.status === COMPLETION_STATE.INCOMPLETE) {
+        return;
+      }
+
       Adapt.trigger('tracking:complete', completionData);
       Adapt.log.debug('tracking:complete', completionData);
     },
@@ -96,14 +98,14 @@ define([
 
       // Assessment completed required.
       if (this._config._requireAssessmentCompleted) {
-        if (!this._assessmentState) {
+        if (!Adapt.assessment.getState()) {
           // INCOMPLETE: assessment is not complete.
           return completionData;
         }
 
         // PASSED/FAILED: assessment completed.
-        completionData.status = this._assessmentState.isPass ? COMPLETION_STATE.PASSED : COMPLETION_STATE.FAILED;
-        completionData.assessment = this._assessmentState;
+        completionData.status = Adapt.assessment.getState().isPass ? COMPLETION_STATE.PASSED : COMPLETION_STATE.FAILED;
+        completionData.assessment = Adapt.assessment.getState();
 
         return completionData;
       }
