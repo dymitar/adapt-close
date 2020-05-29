@@ -84,6 +84,7 @@ define([
     // Taken from core/js tracking.js
     getCompletionData: function() {
       this._config = Adapt.config.get('_completionCriteria');
+      this._assessmentState = Adapt.assessment.getState();
 
       var completionData = {
         status: COMPLETION_STATE.INCOMPLETE,
@@ -98,14 +99,14 @@ define([
 
       // Assessment completed required.
       if (this._config._requireAssessmentCompleted) {
-        if (!Adapt.assessment.getState()) {
+        if (!this._assessmentState || !this._assessmentState.isComplete) {
           // INCOMPLETE: assessment is not complete.
           return completionData;
         }
 
         // PASSED/FAILED: assessment completed.
-        completionData.status = Adapt.assessment.getState().isPass ? COMPLETION_STATE.PASSED : COMPLETION_STATE.FAILED;
-        completionData.assessment = Adapt.assessment.getState();
+        completionData.status = this._assessmentState.isPass ? COMPLETION_STATE.PASSED : COMPLETION_STATE.FAILED;
+        completionData.assessment = this._assessmentState;
 
         return completionData;
       }
