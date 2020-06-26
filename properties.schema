@@ -222,6 +222,15 @@
                       "inputType": "Checkbox",
                       "validators": [],
                       "help": "If enabled, the close button will show when the user has passsed the course assessment."
+                    },
+                    "_requireComponentCompleted": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Component completion required",
+                      "inputType": "Checkbox",
+                      "validators": [],
+                      "help": "If enabled, the button will only show if the current Component is complete."
                     }
                   }
                 },

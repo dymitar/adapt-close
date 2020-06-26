@@ -33,7 +33,8 @@
     },
     "_tracking": {
         "_requireCourseCompleted": false,
-        "_requireAssessmentPassed": false
+        "_requireAssessmentPassed": false,
+        "_requireComponentCompleted": false
     },
     "_notifyPrompt": {
         "_isEnabled": true,
