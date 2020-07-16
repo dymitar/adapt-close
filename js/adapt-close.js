@@ -84,7 +84,10 @@ define([
     // Taken from core/js tracking.js
     getCompletionData: function() {
       this._config = Adapt.config.get('_completionCriteria');
-      this._assessmentState = Adapt.assessment.getState();
+
+      if (this._config._requireAssessmentCompleted) {
+        this._assessmentState = Adapt.assessment.getState();
+      }
 
       var completionData = {
         status: COMPLETION_STATE.INCOMPLETE,
