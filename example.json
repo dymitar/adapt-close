@@ -1,24 +1,46 @@
-    // To go in the course.json file
-    "_close": {
+// To go on course json
+
+"_close": {
+  "_isEnabled": true,
+	"_button": {
+		"_isEnabled": true,
+		"_notifyPromptIfIncomplete": {
+			"_isEnabled": false,
+			"title": "Confirm close",
+			"body": "Are you sure you want to close the window?",
+			"confirm": "Close window",
+			"cancel": "Cancel"
+		},
+		"_notifyPromptIfComplete": {
+			"_isEnabled": false,
+			"title": "Confirm close",
+			"body": "Are you sure you want to close the window?",
+			"confirm": "Close window",
+			"cancel": "Cancel"
+		}
+	},
+	"browserPromptIfIncomplete": "",
+	"browserPromptIfComplete": ""
+},
+
+// To go on a component
+
+"_close": {
+    "_isEnabled": true,
+    "_classes": "",
+    "_button": {
+      "title": "Close module"
+    },
+    "_tracking": {
+        "_requireCourseCompleted": false,
+        "_requireAssessmentPassed": false,
+        "_requireComponentCompleted": false
+    },
+    "_notifyPrompt": {
         "_isEnabled": true,
-        "_button": {
-            "_isEnabled": true,
-            "_closeViaLMSFinish": false,
-            "_notifyPromptIfIncomplete": {
-                "_isEnabled": false,
-                "title": "Confirm close",
-                "body": "Are you sure you want to close the window?",
-                "confirm": "Close window",
-                "cancel": "Cancel"
-            },
-            "_notifyPromptIfComplete": {
-                "_isEnabled": false,
-                "title": "Confirm close",
-                "body": "Are you sure you want to close the window?",
-                "confirm": "Close window",
-                "cancel": "Cancel"
-            }
-        },
-        "browserPromptIfIncomplete": "",
-        "browserPromptIfComplete": ""
-    }
+        "title": "Confirm close",
+        "body": "Are you sure you want to close the window?",
+        "confirm": "Close window",
+        "cancel": "Cancel"
+      }
+},

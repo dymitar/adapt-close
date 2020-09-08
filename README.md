@@ -1,12 +1,14 @@
 # Close
 
-An extension to add a close button and/or prompts.
+**Close** is an *extension* for the [Adapt framework](https://github.com/adaptlearning/adapt_framework).   
+
+An extension to add a close button to the navigation bar and/or Articles, Blocks and Components.  
 
 ## Installation
 
-* Add the [example JSON](example.json) to `course.json`.
-* With [Adapt CLI](https://github.com/adaptlearning/adapt-cli) installed, run `adapt install close`. Alternatively, download the ZIP and extract into the src > extensions directory.
-* Run an appropriate Grunt task.
+This extension must be manually installed.  
+
+If **Close** has been uninstalled from the Adapt authoring tool, it may be reinstalled using the [Plug-in Manager](https://github.com/adaptlearning/adapt_authoring/wiki/Plugin-Manager).  
 
 ## Usage
 
@@ -24,22 +26,10 @@ An extension to add a close button and/or prompts.
 		<th>Default</th>
 	</tr>
 	<tr>
-		<td colspan="3"><code>_isEnabled</code></td>
-		<td>Boolean</td>
-		<td>Set to <code>false</code> to completely disable the extension</td>
-		<td><code>false</code></td>
-	</tr>
-	<tr>
-		<td rowspan="12"><code>_button</code></td>
+		<td rowspan="11"><code>_button</code></td>
 		<td colspan="2"><code>_isEnabled</code></td>
 		<td>Boolean</td>
 		<td>Adds a close button to the navigation bar</td>
-		<td><code>false</code></td>
-	</tr>
-	<tr>
-		<td colspan="2"><code>_closeViaLMSFinish</code></td>
-		<td>Boolean</td>
-		<td>Set to <code>true</code> to have the button directly call the SCORM 'finish' function to close the course. This can be useful when the course hasn't been opened in a new window or where the course window can't be closed via JavaScript.</td>
 		<td><code>false</code></td>
 	</tr>
 	<tr>
@@ -118,4 +108,14 @@ An extension to add a close button and/or prompts.
 	</tr>
 </table>
 
-* Note: Firefox doesn’t currently support custom messages in its dialogs.
+## Limitations
+
+Firefox doesn’t currently support custom messages in its dialogs.
+
+----------------------------
+**Version number:**  4.0.0   
+**Framework versions supported:**  5+    
+**Author / maintainer:** [C&G Kineo](https://github.com/cgkineo/adapt-close) / DeltaNet with [contributors](https://github.com/deltanet/adapt-close/graphs/contributors)     
+**Accessibility support:** Yes  
+**RTL support:** Yes     
+**Authoring tool support:** Yes

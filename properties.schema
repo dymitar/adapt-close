@@ -1,6 +1,6 @@
 {
   "type": "object",
-  "$schema": "http://json-schema.org/draft-03/schema",
+  "$schema": "http://json-schema.org/draft-04/schema",
   "id": "http://jsonschema.net",
   "globals": {
     "closeButton": {
@@ -20,33 +20,29 @@
           "properties": {
             "_close": {
               "type": "object",
-              "legend": "Close",
+              "legend": "Close Button",
               "properties": {
                 "_isEnabled": {
-                  "type": "boolean",
-                  "required":true,
-                  "default": true,
-                  "title": "Enabled?",
+                  "type":"boolean",
+                  "required": false,
+                  "default": false,
+                  "title": "Is Enabled",
                   "inputType": "Checkbox",
-                  "validators": []
+                  "validators": [],
+                  "help": "Controls whether the Close extension is enabled or disabled."
                 },
                 "_button": {
                   "type": "object",
-                  "title": "Button",
+                  "title": "Navigation bar button",
                   "properties": {
-                    "_closeViaLMSFinish": {
-                      "type": "boolean",
-                      "default": false,
-                      "title": "Close via LMSFinish?",
-                      "inputType": "Checkbox",
-                      "help": "Enables closing the course via the SCORM 'finish' function rather than by closing the window - useful for LMSes that don't open the course in a new window or don't allow the course window to be closed via JavaScript."
-                    },
                     "_isEnabled": {
                       "type": "boolean",
-                      "default": true,
-                      "title": "Enabled?",
+                      "required": false,
+                      "default": false,
+                      "title": "Is Enabled",
                       "inputType": "Checkbox",
-                      "help": "Set to 'true' to add a close button to the navigation bar"
+                      "validators": [],
+                      "help": "Adds a close button to the navigation bar if enabled."
                     },
                     "_notifyPromptIfIncomplete": {
                       "type": "object",
@@ -54,35 +50,41 @@
                       "properties": {
                         "_isEnabled": {
                           "type": "boolean",
+                          "required": false,
                           "default": false,
-                          "title": "Enabled?",
+                          "title": "Is Enabled",
                           "inputType": "Checkbox",
-                          "help": "Set to true to display a notify prompt if the close button is selected while the course is incomplete"
+                          "validators": [],
+                          "help": "Display a notify prompt if the close button is selected while the course is incomplete."
                         },
                         "title": {
                           "type": "string",
-                          "default": "Confirm close",
+                          "required": false,
+                          "default": "",
                           "inputType": "Text",
                           "help": "Enter the prompt title",
                           "translatable": true
                         },
                         "body": {
                           "type": "string",
-                          "default": "Are you sure you want to close the window?",
+                          "required": false,
+                          "default": "",
                           "inputType": "TextArea",
                           "help": "Enter the prompt message",
                           "translatable": true
                         },
                         "confirm": {
                           "type": "string",
-                          "default": "Close window",
+                          "required": false,
+                          "default": "",
                           "inputType": "Text",
                           "help": "Enter the confirm button text",
                           "translatable": true
                         },
                         "cancel": {
                           "type": "string",
-                          "default": "Cancel",
+                          "required": false,
+                          "default": "",
                           "inputType": "Text",
                           "help": "Enter the cancel button text",
                           "translatable": true
@@ -95,35 +97,41 @@
                       "properties": {
                         "_isEnabled": {
                           "type": "boolean",
+                          "required": false,
                           "default": false,
-                          "title": "Enabled?",
+                          "title": "Is Enabled",
                           "inputType": "Checkbox",
-                          "help": "Set to 'true' to display a notify prompt if the close button is selected after the course has been completed"
+                          "validators": [],
+                          "help": "Display a notify prompt if the close button is selected after the course has been completed."
                         },
                         "title": {
                           "type": "string",
-                          "default": "Confirm close",
+                          "required": false,
+                          "default": "",
                           "inputType": "Text",
                           "help": "Enter the prompt title",
                           "translatable": true
                         },
                         "body": {
                           "type": "string",
-                          "default": "Are you sure you want to close the window?",
+                          "required": false,
+                          "default": "",
                           "inputType": "TextArea",
                           "help": "Enter the prompt message",
                           "translatable": true
                         },
                         "confirm": {
                           "type": "string",
-                          "default": "Close window",
+                          "required": false,
+                          "default": "",
                           "inputType": "Text",
                           "help": "Enter the confirm button text",
                           "translatable": true
                         },
                         "cancel": {
                           "type": "string",
-                          "default": "Cancel",
+                          "required": false,
+                          "default": "",
                           "inputType": "Text",
                           "help": "Enter the cancel button text",
                           "translatable": true
@@ -134,6 +142,7 @@
                 },
                 "browserPromptIfIncomplete": {
                   "type": "string",
+                  "required": false,
                   "default": "",
                   "title": "Browser prompt if incomplete",
                   "inputType": "Text",
@@ -142,11 +151,135 @@
                 },
                 "browserPromptIfComplete": {
                   "type": "string",
+                  "required": false,
                   "default": "",
                   "title": "Browser prompt if complete",
                   "inputType": "Text",
                   "help": "Enter text to display a browser dialog if the window is closed after the course has been completed",
                   "translatable": true
+                }
+              }
+            }
+          }
+        },
+        "component": {
+          "type":"object",
+          "properties":{
+            "_close": {
+              "type":"object",
+              "required": false,
+              "legend": "Close Button",
+              "properties":{
+                "_isEnabled": {
+                  "type":"boolean",
+                  "required": false,
+                  "default": false,
+                  "title": "Is Enabled",
+                  "inputType": "Checkbox",
+                  "validators": [],
+                  "help": "Controls whether the Close extension is enabled or disabled."
+                },
+                "_classes": {
+                  "type": "string",
+                  "required": false,
+                  "title": "Classes",
+                  "inputType": "Text",
+                  "validators": []
+                },
+                "_button": {
+                  "type": "object",
+                  "required": true,
+                  "properties": {
+                    "title": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Button text",
+                      "inputType": "Text",
+                      "validators": [],
+                      "translatable": true
+                    }
+                  }
+                },
+                "_tracking": {
+                  "type": "object",
+                  "required": false,
+                  "properties": {
+                    "_requireCourseCompleted": {
+                      "type":"boolean",
+                      "required": false,
+                      "default": false,
+                      "title":"Course completion required",
+                      "inputType": "Checkbox",
+                      "validators": [],
+                      "help": "If enabled, the close button will show when the user completes all the components in the course."
+                    },
+                    "_requireAssessmentPassed": {
+                      "type":"boolean",
+                      "required": false,
+                      "default": false,
+                      "title":"Assessment pass required",
+                      "inputType": "Checkbox",
+                      "validators": [],
+                      "help": "If enabled, the close button will show when the user has passsed the course assessment."
+                    },
+                    "_requireComponentCompleted": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Component completion required",
+                      "inputType": "Checkbox",
+                      "validators": [],
+                      "help": "If enabled, the button will only show if the current Component is complete."
+                    }
+                  }
+                },
+                "_notifyPrompt": {
+                  "type": "object",
+                  "title": "Notify prompt",
+                  "properties": {
+                    "_isEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "default": false,
+                      "title": "Is Enabled",
+                      "inputType": "Checkbox",
+                      "validators": [],
+                      "help": "Display a notify prompt if the close button is selected."
+                    },
+                    "title": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Prompt Title",
+                      "inputType": "Text",
+                      "translatable": true
+                    },
+                    "body": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Prompt Body",
+                      "inputType": "TextArea",
+                      "translatable": true
+                    },
+                    "confirm": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Confirm button text",
+                      "inputType": "Text",
+                      "translatable": true
+                    },
+                    "cancel": {
+                      "type": "string",
+                      "required": false,
+                      "default": "",
+                      "title": "Cancel button text",
+                      "inputType": "Text",
+                      "translatable": true
+                    }
+                  }
                 }
               }
             }

@@ -1,9 +1,28 @@
 .nav {
-  &__close-btn {
-    .u-float-right;
-  }
+	&__close-btn {
+		float: right;
 
-  &__close-btn .icon {
-    .icon-cross;
-  }
+		background-color: @validation-error !important;
+	  color: #fff !important;
+
+		&:hover {
+			background-color: @nav-icon-hover !important;
+		}
+	}
+}
+
+.close {
+	display: inline-block;
+
+	&__inner {
+		margin-top: @btn-margin;
+
+		&.center {
+			text-align: center;
+		}
+	}
+}
+
+.extensions {
+	text-align: center;
 }
